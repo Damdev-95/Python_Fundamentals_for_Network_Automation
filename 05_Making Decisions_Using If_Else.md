@@ -1,14 +1,8 @@
-Below is **one clean, copy-ready Markdown file** for **Episode 5 – Making Decisions (If, Else, Break, Continue)**.
 
-No video hooks, no fluff — **pure technical Markdown**, structured exactly like Episode 4 with deeper **real-world network automation examples**.
 
-You can **copy/paste directly into GitHub**.
+# Python for Network Automation – Episode 5
 
----
-
-# **Python for Network Automation – Episode 5
-
-Making Decisions (If, Else, Elif, Break, Continue)**
+Making Decisions **(If, Else, Elif, Break, Continue)**
 
 Automation becomes powerful when your script can **make decisions**—just like a real network engineer who checks device types, interface states, VLAN assignments, BGP sessions, and more.
 
