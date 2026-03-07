@@ -1,4 +1,4 @@
-## Stop Overpaying for Cloud Networking: Building a Single-IP Egress over Site-to-Site VPN with StrongSwan
+## Stop Overpaying for Cloud Networking: Build a Single Egress IP Using Site-to-Site VPN and StrongSwan
 
 Cloud-native doesn’t always mean cloud-managed. Managed gateways promise a “set-and-forget” experience, but they often fall short when you need fine-grained control for complex site-to-site integrations.
 
