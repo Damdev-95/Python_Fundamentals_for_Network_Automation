@@ -1,4 +1,4 @@
-## Stop Overpaying for Cloud Networking: Build a Single Egress IP Using Site-to-Site VPN and StrongSwan
+## Stop Overpaying for Cloud Networking: Build a Single Egress IP over Site-to-Site VPN with StrongSWAN
 
 Cloud-native doesn’t always mean cloud-managed. Managed gateways promise a “set-and-forget” experience, but they often fall short when you need fine-grained control for complex site-to-site integrations.
 
@@ -13,7 +13,7 @@ Cloud providers like AWS and Azure make it easy to start, but "Managed" services
 
 The Problem: If you have 50 instances in a private subnet, the partner network on the other side of the VPN usually doesn't want to whitelist 50 different IP addresses. They want only one trusted IP.
 
-## Archittecture diagram
+## Architecture diagram
 
 
 
@@ -84,6 +84,18 @@ conn site-to-site
         auto=route
         keyexchange=ikev2
 ```
+Uderstanding the configuratioon parameters;
+leftid= Local VPN Gateway
+right= Partner VPN Gateway
+leftsubnet=10.101.126.62/32		Local Host IP
+rightsubnet=192.168.156.27/32	Remote Host IP
+ike=aes256-sha256-modp2048!	  	Phase 1: aes256 / sha256 / group14
+esp=aes256-sha256	          	Phase 2: esp-aes256 / esp-sha256
+ikelifetime=1h	              	Phase 1: 3600 seconds
+lifetime=8h	                  	Phase 2: 28800 seconds
+dpddelay=30	
+dpdtimeout=120	
+keyexchange=ikev2	        Internet Key Exchnage Version 2
 
 - Configure Pre-Shared Key
 edit secrets file:
