@@ -46,7 +46,6 @@ Mininimum of 20 GB Storage
 
 -  Install StrongSwan
 sudo apt update
-sudo apt upgrade -y
 sudo apt install strongswan
 
 Verify installation:
@@ -54,12 +53,37 @@ ipsec version
 
 - Enable IP Forwarding
   The server must route traffic between Local network and VPN
+  sudo sysctl -w net.ipv4.ip_forward=1
 
 - Configure StrongSwan
 edit IPsec Configuration using the following commands;
 
 sudo nano /etc/ipsec.conf
-
+```
+config setup
+        strictcrlpolicy=yes
+        charondebug="all"
+        uniqueids = yes
+conn site-to-site
+        authby=secret
+        left=%defaultroute
+	      type=tunnel
+        leftid=35.156.227.84
+        leftsubnet=10.101.126.62/32
+        #rightid=41.223.145.225
+        right=41.223.145.225
+        rightsubnet=41.223.145.40/32
+        ike=aes256-sha256-modp2048!
+        esp=aes256-sha256
+        keyingtries=0
+        ikelifetime=1h
+        lifetime=8h
+        dpddelay=30
+        dpdtimeout=120
+        dpdaction=restart
+        auto=route
+        keyexchange=ikev2
+```
 
 - Configure Pre-Shared Key
 edit secrets file:
