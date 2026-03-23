@@ -110,12 +110,42 @@ for device in devices:
     print("************************************")
 ```
 
+# Loops
+Loops allow you to generate multiple configurations automatically.
+
+```python
+devices = [
+    {"interface": "Gi1/0/1", "description": "Terminal-1", "vlan": 10},
+    {"interface": "Gi1/0/2", "description": "Terminal-2", "vlan": 20},
+]
+```
+
+```jinja2
+{% for device in devices %}
+interface {{ device.interface }}
+ description {{ device.description }}
+ switchport access vlan {{ device.vlan }}
+!
+{% endfor %}
+```
+
+```bash
+interface Gi1/0/1
+ description Terminal-1
+ switchport access vlan 10
+!
+interface Gi1/0/2
+ description Terminal-2
+ switchport access vlan 20
+!
+```
+
 Real-Life Use Cases
-🔹 Interface configuration automation
-🔹 VLAN deployments
-🔹 BGP / OSPF config generation
-🔹 Customer onboarding templates
-🔹 Data center provisioning
+- 🔹 Interface configuration automation
+- 🔹 VLAN deployments
+- 🔹 BGP / OSPF config generation
+- 🔹 Customer onboarding templates
+- 🔹 Data center provisioning
 
  
 
