@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r netdevops_labs/requirements.txt
 
       - name: Run Script
         run: |
