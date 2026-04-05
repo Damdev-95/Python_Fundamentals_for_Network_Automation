@@ -10,7 +10,9 @@ jobs:
   run-script:
     runs-on: 
       - self-hosted
-
+    defaults:
+      run:
+        working-directory: netdevops_labs
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -22,8 +24,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r netdevops_labs/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run Script
         run: |
-          python netdevops_labs/get_interfaces.py
+          python get_interfaces.py
