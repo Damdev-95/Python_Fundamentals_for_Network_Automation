@@ -26,4 +26,4 @@ jobs:
 
       - name: Run Script
         run: |
-          python get_interfaces.py
+          python netdevops_labs/get_interfaces.py
