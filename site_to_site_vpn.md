@@ -70,7 +70,6 @@ conn site-to-site
 	      type=tunnel
         leftid=35.156.227.84
         leftsubnet=10.101.126.62/32
-        #rightid=41.223.145.225
         right=3.140.14.10
         rightsubnet=192.168.100.100/32
         ike=aes256-sha256-modp2048!
@@ -85,17 +84,17 @@ conn site-to-site
         keyexchange=ikev2
 ```
 Uderstanding the configuratioon parameters;
-leftid= Local VPN Gateway
-right= Partner VPN Gateway
-leftsubnet=10.101.126.62/32		Local Host IP
-rightsubnet=192.168.100.100/32	Remote Host IP
-ike=aes256-sha256-modp2048!	  	Phase 1: aes256 / sha256 / group14
-esp=aes256-sha256	          	Phase 2: esp-aes256 / esp-sha256
-ikelifetime=1h	              	Phase 1: 3600 seconds
-lifetime=8h	                  	Phase 2: 28800 seconds
-dpddelay=30	
-dpdtimeout=120	
-keyexchange=ikev2	        Internet Key Exchnage Version 2
+- leftid= Local VPN Gateway
+- right= Partner VPN Gateway
+- leftsubnet=10.101.126.62/32		Local Host IP
+- rightsubnet=192.168.100.100/32	Remote Host IP
+- ike=aes256-sha256-modp2048!	  	Phase 1: aes256 / sha256 / group14
+- esp=aes256-sha256	          	Phase 2: esp-aes256 / esp-sha256
+- ikelifetime=1h	              	Phase 1: 3600 seconds
+- lifetime=8h	                  	Phase 2: 28800 seconds
+- dpddelay=30	
+- dpdtimeout=120	
+- keyexchange=ikev2	        Internet Key Exchnage Version 2
 
 - Configure Pre-Shared Key
 edit secrets file:
